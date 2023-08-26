@@ -1,4 +1,4 @@
-import 'package:application_on_state_management/ReplaceUI/cubit/replace_ui_cubit_cubit.dart';
+import '../../../Cubits/ReplaceUI/replace_ui_cubit_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

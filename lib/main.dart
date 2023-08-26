@@ -1,5 +1,9 @@
-import 'package:application_on_state_management/ReplaceUI/cubit/replace_ui_cubit_cubit.dart';
-import 'package:application_on_state_management/Screens/replace_ui_with_cubit.dart';
+import 'package:application_on_state_management/Cubits/FastFilterBar/fast_filter_bar_cubit.dart';
+import 'package:application_on_state_management/Cubits/RadioButton/radio_button_cubit.dart';
+import 'package:application_on_state_management/Cubits/SecurePassword/secure_password_cubit.dart';
+import 'package:application_on_state_management/Screens/UsingSetState/radios_using_set_state.dart';
+
+import '../Cubits/ReplaceUI/replace_ui_cubit_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -17,14 +21,23 @@ class MyApp extends StatelessWidget {
         BlocProvider<ReplaceUiCubit>(
           create: (BuildContext context) => ReplaceUiCubit(),
         ),
+        BlocProvider<FastFilterBarCubit>(
+          create: (BuildContext context) => FastFilterBarCubit(),
+        ),
+        BlocProvider<SecurePasswordCubit>(
+          create: (BuildContext context) => SecurePasswordCubit(),
+        ),
+        BlocProvider<RadioButtonCubit>(
+          create: (BuildContext context) => RadioButtonCubit(),
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.cyanAccent),
           useMaterial3: true,
         ),
-        home: const ReplaceUiUsingCubit(),
+        home: const RadiosUsingSetState(),
       ),
     );
   }
